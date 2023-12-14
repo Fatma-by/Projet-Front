@@ -7,13 +7,14 @@ import Navbar from "./Components/Navbar/Navbar";
 
 import React from "react";
 import Body from "./Components/Body";
-import Accueil from "./Components/Accueil/Accueil";
+import UploadWidget from "./Components/Apploder/Apploder";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Body />
+      <UploadWidget />
     </BrowserRouter>
   );
 };
