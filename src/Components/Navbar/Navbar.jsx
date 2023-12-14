@@ -33,7 +33,7 @@ const Navbar = () => {
                         <ul className="navbar-nav ms-auto nav_ul align-items-center">
                             
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Accueil">Accueil</Link>
+                                <Link className="nav-link" to="/">Accueil</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/Bibliothèque">Bibliothèque</Link>

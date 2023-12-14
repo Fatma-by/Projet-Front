@@ -6,7 +6,7 @@ function Premiere() {
     <div className="P-Container">
       <div className="Pr-Container">
         <div className="titre">
-          <p className="fw-bold display-4 mb-4">Bienvenu !</p>
+          <p className="fw-bold display-4 mb-4">Cours</p>
         </div>
         <div className="Paragraphe">
           <p className=" fw-bold ">
@@ -14,6 +14,7 @@ function Premiere() {
             matériaux et n'hésitez pas à télécharger ce qui vous intéresse.
           </p>
         </div>
+      </div>
         <div className="ButtonContainer">
           <Button variant="outline-secondary" size="lg">
             Première Trimèstre
@@ -25,7 +26,6 @@ function Premiere() {
             Troisième Trimèstre
           </Button>{" "}
         </div>
-      </div>
     </div>
   );
 }

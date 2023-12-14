@@ -1,14 +1,14 @@
 .P-Container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     min-height: 100vh;
     background: linear-gradient(rgb(195, 194, 204), rgb(214, 214, 214));
 }
 
 .Pr-Container {
    
-    width: 90vw; /* Utilisation de l'unité vw pour la largeur */
+    width: 20vw; /* Utilisation de l'unité vw pour la largeur */
     max-width: 110em; /* Définir une largeur maximale pour les grands écrans */
     min-height: 60vh; /* Utilisation de l'unité vh pour la hauteur minimale */
     background-color: rgb(247, 247, 247);
@@ -19,10 +19,8 @@
 
  
 .ButtonContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* Utilisation de space-between pour un espacement égal */
-    position: relative;
+     display: flex;
+    
     top: 12vw; /* Utilisation de l'unité vw pour la position verticale */
 }
 
@@ -30,8 +28,8 @@
     position: relative;
     font-weight: 800;
     top: 8vw; /* Utilisation de l'unité vw pour la position verticale */
-    left: 2vw;
-    font-size: 22px;
+    left: 0.5vw;
+    font-size: 16px;
 }
 
 .titre {

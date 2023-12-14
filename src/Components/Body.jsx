@@ -41,12 +41,12 @@ const Body = () => {
                   <Route path="/Exercices" element={<ExerciceArabe />} />
                   <Route path="/Cours" element={<CoursArabe />} />
 
-                  <Route path="/premiere" element={<Premiere />} />
                 </Route>
               </Routes>
             </>
           }
         />
+          <Route path="/premiere" element={<Premiere />} />
         <Route
           path="/science/*"
           element={
