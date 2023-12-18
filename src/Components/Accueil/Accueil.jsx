@@ -9,6 +9,7 @@ import Carousel from "react-bootstrap/Carousel";
 const Accueil = () => {
   return (
     <>
+
     <div className="text-center mt-5">
         <p className="fw-bold display-4 mb-4">
           Bienvenue dans notre site "Ma Classe"

@@ -12,8 +12,9 @@ import UploadWidget from "./Components/Apploder/Apploder";
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
+    <Navbar/>
       <Body />
+      
       <UploadWidget />
     </BrowserRouter>
   );

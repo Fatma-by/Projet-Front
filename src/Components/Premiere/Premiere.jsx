@@ -1,33 +1,24 @@
-import "./Premiere.css";
-import Button from "react-bootstrap/Button";
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 
-function Premiere() {
+export default function CardExample() {
   return (
-    <div className="P-Container">
-      <div className="Pr-Container">
-        <div className="titre">
-          <p className="fw-bold display-4 mb-4">Cours</p>
-        </div>
-        <div className="Paragraphe">
-          <p className=" fw-bold ">
-            Étudiez bien et trouvez votre chemin vers le succès! Explorez les
-            matériaux et n'hésitez pas à télécharger ce qui vous intéresse.
-          </p>
-        </div>
-      </div>
-        <div className="ButtonContainer">
-          <Button variant="outline-secondary" size="lg">
-            Première Trimèstre
-          </Button>{" "}
-          <Button variant="outline-secondary" size="lg">
-            Deuxième Trimèstre
-          </Button>{" "}
-          <Button variant="outline-secondary" size="lg">
-            Troisième Trimèstre
-          </Button>{" "}
-        </div>
-    </div>
+    <>
+      <Col md={3}>
+        <Card>
+        <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2018/06/21/13/57/clouds-3488632__340.jpg" />
+          <Card.Body>
+            <Card.Title>React bootstrap 5 card with image</Card.Title>
+            <Card.Text>
+              React bootstrap 5 description card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button variant="primary"> Read More</Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    </>
   );
 }
-
-export default Premiere;

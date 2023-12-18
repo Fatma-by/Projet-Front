@@ -1,67 +1,39 @@
-import React from "react";
-import "./SidebarMatiere.css";
-import { Link } from "react-router-dom";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function SidebarMatiere() {
-  const handleToggleSidebar = () => {
-    const sidebar = document.querySelector("#sidebar");
-    sidebar.classList.toggle("collapsed");
-  };
   return (
-    <div className="wrapper">
-      {/* <!-- Sidebar --> */}
-      <aside id="sidebar">
-        <div className="h-200">
-          {/* <!-- Sidebar Navigation --> */}
-          <ul className="sidebar-nav">
-            <li className="sidebar-item">
-              <i className="fa-regular fa-file-lines pe-2"></i>
-              <Link to="/premiere">Première Année</Link>
-            </li>
-            <li className="sidebar-item">
-              <i className="fa-solid fa-sliders pe-2"></i>
-              Deuxième Année
-            </li>
-            <li className="sidebar-item">
-              <i className="fa-regular fa-user pe-2"></i>
-              Troisième Année
-            </li>
-            <li className="sidebar-item">
-              <i className="fa-solid fa-sliders pe-2"></i>
-              Quatrième Année
-            </li>
-            <li className="sidebar-item">
-              <i className="fa-solid fa-sliders pe-2"></i>
-              Cinquième Année
-            </li>
-            <li className="sidebar-item">
-              <i className="fa-solid fa-sliders pe-2"></i>
-              Sixième Année
-            </li>
-          </ul>
-        </div>
-      </aside>
-      {/* <!-- Main Component --> */}
-      <div className="main">
-        <nav className="navbar navbar-expand px-3 border-bottom">
-          {/* <!-- Button for sidebar toggle --> */}
-          <button
-            className="btn"
-            type="button"
-            data-bs-theme="dark"
-            onClick={handleToggleSidebar}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-        <main className="content px-3 py-2">
-          <div className="container-fluid">
-            <div className="mb-3"></div>
-          </div>
-        </main>
-      </div>
-    </div>
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

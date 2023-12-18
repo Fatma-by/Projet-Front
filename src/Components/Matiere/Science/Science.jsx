@@ -18,6 +18,7 @@ export default function Science() {
       </Routes>
 
       <div>
+
             <CardList/>
 
       </div>

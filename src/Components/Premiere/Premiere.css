@@ -1,9 +1,10 @@
 .P-Container {
     display: flex;
     align-items: center;
-    justify-content: left;
     min-height: 100vh;
     background: linear-gradient(rgb(195, 194, 204), rgb(214, 214, 214));
+    justify-content: space-around;
+
 }
 
 .Pr-Container {
@@ -20,6 +21,9 @@
  
 .ButtonContainer {
      display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+
     
     top: 12vw; /* Utilisation de l'unité vw pour la position verticale */
 }
