@@ -1,10 +1,10 @@
 import React from "react";
-import "../Arabe/DevoirArabe/DevoirArab.css";
+import "./ExerciceArab.css";
 
-function DevoirScience() {
+function ExercicesArabe() {
   return (
     <>
-    <div className="classe">
+    <div className="classes">
       <div className="classContainer">
         <button className="classBut">
           <p>السنة الاولى</p>
@@ -36,4 +36,4 @@ function DevoirScience() {
   );
 }
 
-export default DevoirScience;
+export default ExercicesArabe;

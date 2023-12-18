@@ -1,28 +1,28 @@
 import React from "react";
 import "../Arabe/DevoirArabe/DevoirArab.css";
 
-function DevoirScience() {
+function CoursFrancais() {
   return (
     <>
     <div className="classe">
       <div className="classContainer">
         <button className="classBut">
-          <p>السنة الاولى</p>
+          <p>Première Année</p>
         </button>
         <button className="classBut">
-          <p> السنة الثانية</p>
+          <p> Deuxième Année</p>
         </button>
         <button className="classBut">
-          <p>السنة الثالثة</p>
+          <p> Troisième Année</p>
         </button>
         <button className="classBut">
-          <p>السنة الرابعة</p>
+          <p> Quatrième Année</p>
         </button>
         <button className="classBut">
-          <p>السنة الخامسة</p>
+          <p> Cinquième Année</p>
         </button>
         <button className="classBut">
-          <p>السنة السادسة</p>
+          <p>Sixième Année</p>
         </button>
       </div>
       </div>
@@ -36,4 +36,4 @@ function DevoirScience() {
   );
 }
 
-export default DevoirScience;
+export default  CoursFrancais;

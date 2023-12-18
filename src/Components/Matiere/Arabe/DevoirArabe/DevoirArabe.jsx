@@ -1,7 +1,7 @@
 import React from "react";
-import "../Arabe/DevoirArabe/DevoirArab.css";
+import "./DevoirArab.css";
 
-function DevoirScience() {
+function DevoirArabe() {
   return (
     <>
     <div className="classe">
@@ -36,4 +36,4 @@ function DevoirScience() {
   );
 }
 
-export default DevoirScience;
+export default DevoirArabe;

@@ -1,0 +1,51 @@
+
+.classes{
+    background-image: url("/image/Design sans titre (1).png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+  }
+  
+  .classBut{
+      height: 4em;
+      width: 30em;
+      margin: 10px;
+      margin-top: 25px;
+      border-radius: 15px;
+      background:linear-gradient(rgb(62, 49, 238), rgb(255, 116, 116));
+      border: none;
+      transition: all .2s ease-in-out;
+      position: relative;
+      top: 50px;
+  }
+  .classBut:hover{
+      transform: scale(1.1);
+      box-shadow: 0 0 12px rgb(199, 199, 199);
+    }
+  .classContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    right:50px;
+    
+  }
+  
+  .classBut p{
+      color:white;
+      font-size: 20px;
+      margin-top: 13px;
+      position: relative;
+      bottom: 10px;
+    }
+  
+   .cardArab{
+    position: relative;
+    bottom: 370px;
+    left: 50px;
+   }
+  
+   
+  

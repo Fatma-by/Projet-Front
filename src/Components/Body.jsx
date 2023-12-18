@@ -3,27 +3,28 @@ import Accueil from "./Accueil/Accueil";
 import Login from "./Login/Login";
 import Arabe from "./Matiere/Arabe/Arabe";
 import Français from "./Matiere/Français/Français";
-import { Routes, Route, Navigate ,useLocation} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Sinscrire from "./Sinscrire/Sinscrire";
 import CreerClass from "./CreerClass/CreerClass";
 import AccessClass from "./AccessClass/AccessClass";
-import DevoirArabe from "../Components/Matiere/Arabe/DevoirArabe";
-import ExerciceArabe from "../Components/Matiere/Arabe/ExerciceArabe";
-import CoursArabe from "../Components/Matiere/Arabe/CoursArabe";
-import Premiere from "../Components/Premiere/Premiere";
+import DevoirArabe from "../Components/Matiere/Arabe/DevoirArabe/DevoirArabe";
+import ExerciceArabe from "../Components/Matiere/Arabe/ExerciceArabe/ExerciceArabe";
+import CoursArabe from "../Components/Matiere/Arabe/CoursArabe/CoursArabe";
 import DevoirScience from "../Components/Matiere/Science/DevoirScience";
 import CoursScience from "../Components/Matiere/Science/CoursScience";
+import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
+import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
+import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
 
 import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
 import CardList from "./Card/CardList";
 
 const Body = () => {
-  const location = useLocation()
-  const {pathname} = location
+  const location = useLocation();
+  const { pathname } = location;
 
- 
-   return (
+  return (
     <>
       <Routes>
         <Route path="/Login" element={<Login />} />
@@ -40,13 +41,11 @@ const Body = () => {
                   <Route path="/devoir" element={<DevoirArabe />} />
                   <Route path="/Exercices" element={<ExerciceArabe />} />
                   <Route path="/Cours" element={<CoursArabe />} />
-
                 </Route>
               </Routes>
             </>
           }
         />
-          <Route path="/premiere" element={<Premiere />} />
         <Route
           path="/science/*"
           element={
@@ -58,8 +57,22 @@ const Body = () => {
                   <Route path="/devoir" element={<DevoirScience />} />
                   <Route path="/Exercices" element={<ExerciceScience />} />
                   <Route path="/Cours" element={<CoursScience />} />
+                </Route>
+              </Routes>
+            </>
+          }
+        />
+        <Route
+          path="/francais/*"
+          element={
+            <>
+              {pathname == "/Francais" && <CardList />}
 
-                  <Route path="/premiere" element={<Premiere />} />
+              <Routes>
+                <Route>
+                  <Route path="/devoir" element={<DevoirFrancais />} />
+                  <Route path="/Exercices" element={<ExerciceFrancais />} />
+                  <Route path="/Cours" element={<CoursFrancais />} />
                 </Route>
               </Routes>
             </>

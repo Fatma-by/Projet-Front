@@ -9,13 +9,7 @@ export default function Science() {
   return (
     <>
 
-<Routes>
-        <Route>
-          <Route path="/ExerciceScience" element={<ExerciceScience/>} />
-          
 
-        </Route>
-      </Routes>
 
       <div>
 
