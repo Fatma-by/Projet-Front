@@ -20,6 +20,8 @@ import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
 import CardList from "./Card/CardList";
 
+import AccesClassCreer from "../Components/CreerClass/AccesClassCreer";
+
 const Body = () => {
   const location = useLocation();
   const { pathname } = location;
@@ -83,6 +85,7 @@ const Body = () => {
         <Route path="/Enseignant" element={<CreerClass />} />
         <Route path="/Eleve" element={<AccessClass />} />
         <Route path="/Cours" element={<CoursArabe />} />
+        <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
 
         <Route path="/" element={<Navigate to="/accueil" />} />
         <Route path="*" element={<Navigate to="/accueil" />} />

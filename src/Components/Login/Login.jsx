@@ -1,45 +1,51 @@
 import "./Login.css";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useCallback, useEffect} from "react";
+import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useAuthStore from '../AuthStore/AuthStore';
-
-
+import useAuthStore from "../AuthStore/AuthStore";
+import { authStore } from "../AuthStore/AuthStore";
 
 function Login() {
+  const push = useNavigate();
 
- 
-    const push = useNavigate();
-  
-    const handleClick = useCallback((p) => {
-      const {data} = p;
+  const [name, mail, role, id, setName, setEmail, setRole, setId] = authStore(
+    (state) => [
+      state.name,
+      state.email,
+      state.role,
+      state.id,
+      state.setName,
+      state.setEmail,
+      state.setRole,
+      state.setId,
+    ]
+  );
 
-      if (data.role.includes("Enseignant")) {
-        push("/Enseignant");
-      } else if (data.role.includes("Eleve")) {
-        push("/Eleve");
-      }
-      
-     
-     
-    }, []);
-    const {
-      email,
-      password,
-      emailError,
-      passwordError,
-      isDisabled,
-      refmail,
-      refpassword,
-      verifyAndSetEmail,
-      verifyAndSetPassword,
-      updateIsDisabled,
-    } = useAuthStore();
-    useEffect(() => {
-      updateIsDisabled();
-    }, [emailError, passwordError, updateIsDisabled]);
-  
+  const handleClick = useCallback((p) => {
+    const { data } = p;
+
+    if (data.role.includes("Enseignant")) {
+      push("/Enseignant");
+    } else if (data.role.includes("Eleve")) {
+      push("/Eleve");
+    }
+  }, []);
+  const {
+    email,
+    password,
+    emailError,
+    passwordError,
+    isDisabled,
+    refmail,
+    refpassword,
+    verifyAndSetEmail,
+    verifyAndSetPassword,
+    updateIsDisabled,
+  } = useAuthStore();
+  useEffect(() => {
+    updateIsDisabled();
+  }, [emailError, passwordError, updateIsDisabled]);
 
   const handleSubmit = async (values) => {
     console.log(email, password);
@@ -49,7 +55,11 @@ function Login() {
         password: password,
       })
       .then(async (response) => {
-        console.log(response);
+        console.log(response.data.data);
+        setEmail(response.data.data.email);
+        setId(response.data.data._id);
+        setName(response.data.data.name);
+        setRole(response.data.data.role);
         toast.success(response.data.message);
 
         setTimeout(handleClick(response.data), 5000);

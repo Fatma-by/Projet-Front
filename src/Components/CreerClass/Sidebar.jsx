@@ -92,7 +92,6 @@ function Sidebar() {
             data-bs-theme="dark"
             onClick={handleToggleSidebar}
           >
-            <span className="navbar-toggler-icon"></span>
           </button>
         </nav>
         <main className="content px-3 py-2">

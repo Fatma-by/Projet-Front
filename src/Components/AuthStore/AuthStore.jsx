@@ -1,11 +1,11 @@
-import create from 'zustand';
+import create from "zustand";
 import { validateEmail, validatePasword } from "../../../helper/validator";
-
+import { persist } from "zustand/middleware";
 
 // Créez un store zustand pour gérer l'état
 const useAuthStore = create((set) => ({
-  email: '',
-  password: '',
+  email: "",
+  password: "",
   emailError: false,
   passwordError: false,
   isDisabled: true,
@@ -35,5 +35,23 @@ const useAuthStore = create((set) => ({
     set((state) => ({ isDisabled: state.emailError || state.passwordError }));
   },
 }));
-export default useAuthStore;
 
+export const authStore = create(
+  persist(
+    (set, get) => ({
+      name: "",
+      email: "",
+      role: "",
+      id: "",
+      setEmail: (value) => set((state) => ({ email: value })),
+      setName: (name) => set((state) => ({ name: name })),
+      setRole: (role) => set((state) => ({ role: role })),
+      setId: (id) => set((state) => ({ id: id })),
+    }),
+    {
+      name: "userState", // name of the item in the storage (must be unique)
+    }
+  )
+);
+
+export default useAuthStore;
