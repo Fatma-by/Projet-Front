@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import Modals from "../Modals/Modals";
 
-function Sidebar() {
-  const [show,setShow] = useState(false)
+function Sidebar({ data }) {
+  const [show, setShow] = useState(false);
   const handleToggleSidebar = () => {
     const sidebar = document.querySelector("#sidebar");
     sidebar.classList.toggle("collapsed");
@@ -24,7 +24,7 @@ function Sidebar() {
                 href="#"
                 className="sidebar-link"
                 onClick={() => {
-                 setShow(true)
+                  setShow(true);
                 }}
               >
                 <i className=" pe-2">
@@ -40,29 +40,40 @@ function Sidebar() {
                 Nouvelle classe
               </a>
             </li>
-            <li className="sidebar-item">
-              <a href="#" className="sidebar-link">
-                <i className="fa-regular fa-file-lines pe-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="16"
-                    width="16"
-                    viewBox="0 0 512 512"
-                  >
-                    {" "}
-                    <path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
-                  </svg>
-                </i>
-                Toutes les classes
-              </a>
 
-              <ul
-                id="pages"
-                className="sidebar-dropdown list-unstyled collapse"
-                data-bs-parent="#sidebar"
-              ></ul>
-            </li>
+            <a
+              className="sidebar-link"
+              href="/"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fa-regular fa-file-lines pe-2">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="16"
+                  width="16"
+                  viewBox="0 0 512 512"
+                >
+                  {" "}
+                  <path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
+                </svg>
+              </i>
+              Toutes les classes
+            </a>
+            <ul className="dropdown-menu">
+              {data.map((classItem) => (
+                <li key={classItem.id}>
+                  <a className="dropdown-item" href={`/classe/${classItem.id}`}>
+                    {classItem.NomClass}
+                  </a>
+                </li>
+              ))}
+              <ul />
+            </ul>
+
             <li className="sidebar-item">
               <a href="#" className="sidebar-link">
                 <i className="fa-solid fa-sliders pe-2">
@@ -91,15 +102,14 @@ function Sidebar() {
             type="button"
             data-bs-theme="dark"
             onClick={handleToggleSidebar}
-          >
-          </button>
+          ></button>
         </nav>
         <main className="content px-3 py-2">
           <div className="container-fluid">
             <div className="mb-3"></div>
           </div>
         </main>
-        {show && <Modals show={show  } setShow={setShow}/>}
+        {show && <Modals show={show} setShow={setShow} />}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { authStore } from "../AuthStore/AuthStore";
+import Sidebar from "./Sidebar";
 
 const AccesClassCreer = () => {
   const [id, setId] = authStore((state) => [state.id, state.setId]);
@@ -17,11 +18,9 @@ const AccesClassCreer = () => {
 
   return (
     <div>
-      <h1>Your Data:</h1>
       <ul>
-        {data.map((data) => (
-          <li key={data.id}>{data.Niveau}</li>
-        ))}
+      <Sidebar data={data} />
+
       </ul>
     </div>
   );

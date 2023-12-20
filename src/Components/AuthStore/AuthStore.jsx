@@ -53,5 +53,19 @@ export const authStore = create(
     }
   )
 );
+export const classStore = create(
+  persist(
+    (set, get) => ({
+      NomClass: "",
+      
+      id: "",
+      setNomClass: (NomClass) => set((state) => ({ NomClass: NomClass })),
+      setId: (id) => set((state) => ({ id: id })),
+    }),
+    {
+      name: "classState", // name of the item in the storage (must be unique)
+    }
+  )
+);
 
 export default useAuthStore;
