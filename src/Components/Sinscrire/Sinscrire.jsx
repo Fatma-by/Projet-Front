@@ -36,7 +36,7 @@ function SignUpSection() {
     verifyAndSetEmail,
     verifyAndSetPassword,
     verifyAndSetConfirmPassword,
-    handleDropdownChange,
+    
     handleCheckboxChange,
     updateIsDisabled,
   } = useSignUpStore();
@@ -64,7 +64,7 @@ function SignUpSection() {
         Nom: first,
         Prenom: last,
         Adressepostale: address,
-        Role: selectedRole,
+        Role: 'Enseignant',
         email: email,
         password: password,
       })
@@ -161,7 +161,7 @@ function SignUpSection() {
               </div>
               {addressError && <p>entrer une adresse valide</p>}
 
-              <div className="d-flex flex-row align-items-center mb-4">
+              {/* <div className="d-flex flex-row align-items-center mb-4">
                 <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                 <div className="form-outline flex-fill mb-0">
                   <div className="dropdown">
@@ -203,7 +203,7 @@ function SignUpSection() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>

@@ -6,11 +6,15 @@ import Sidebar from "./Sidebar";
 const AccesClassCreer = () => {
   const [id, setId] = authStore((state) => [state.id, state.setId]);
   const [data, setData] = useState([]);
+  console.log(data);
 
   useEffect(() => {
     axios
       .get(`/api/allclasses/toutes-les-classes/?user=${id}`)
-      .then((response) => setData(response.data))
+      .then((response) => {
+        console.log(response, "here");
+        setData(response.data);
+      })
       .catch((error) =>
         console.error("Erreur lors de la récupération de la classe:", error)
       );
@@ -18,10 +22,15 @@ const AccesClassCreer = () => {
 
   return (
     <div>
-      <ul>
-      <Sidebar data={data} />
-
-      </ul>
+      <ul>{data && data.length >= 0 && <Sidebar data={data} />}</ul>
+      <button
+        onClick={async () => {
+          axios
+            .get("/api/checkauth")
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
+        }}
+      >click to check auth</button>
     </div>
   );
 };

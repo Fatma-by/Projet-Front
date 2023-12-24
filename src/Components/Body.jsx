@@ -15,6 +15,7 @@ import CoursScience from "../Components/Matiere/Science/CoursScience";
 import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
 import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
 import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
+import { Public } from "./Auth";
 
 import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
@@ -29,7 +30,23 @@ const Body = () => {
   return (
     <>
       <Routes>
-        <Route path="/Login" element={<Login />} />
+        <Route
+          path="/Login"
+          element={
+            <Public>
+              <Login />
+            </Public>
+          }
+        />
+        <Route
+          path="/s'inscrire"
+          element={
+            <Public>
+              <Sinscrire />{" "}
+            </Public>
+          }
+        />
+
         <Route path="/science" element={<Science />} />
         <Route path="/" element={<Accueil />} />
         <Route
@@ -81,7 +98,6 @@ const Body = () => {
           }
         />
         <Route path="/français" element={<Français />} />
-        <Route path="/s'inscrire" element={<Sinscrire />} />
         <Route path="/Enseignant" element={<CreerClass />} />
         <Route path="/Eleve" element={<AccessClass />} />
         <Route path="/Cours" element={<CoursArabe />} />

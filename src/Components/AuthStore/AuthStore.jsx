@@ -1,4 +1,4 @@
-import create from "zustand";
+import {create} from "zustand";
 import { validateEmail, validatePasword } from "../../../helper/validator";
 import { persist } from "zustand/middleware";
 

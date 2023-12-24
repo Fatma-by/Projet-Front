@@ -4,6 +4,7 @@ import Modals from "../Modals/Modals";
 
 function Sidebar({ data }) {
   const [show, setShow] = useState(false);
+  console.log(data);
   const handleToggleSidebar = () => {
     const sidebar = document.querySelector("#sidebar");
     sidebar.classList.toggle("collapsed");
@@ -64,13 +65,18 @@ function Sidebar({ data }) {
               Toutes les classes
             </a>
             <ul className="dropdown-menu">
-              {data.map((classItem) => (
-                <li key={classItem.id}>
-                  <a className="dropdown-item" href={`/classe/${classItem.id}`}>
-                    {classItem.NomClass}
-                  </a>
-                </li>
-              ))}
+              {data &&
+                data.length >= 0 &&
+                data.map((classItem) => (
+                  <li key={classItem.id}>
+                    <a
+                      className="dropdown-item"
+                      href={`/classe/${classItem.id}`}
+                    >
+                      {classItem.NomClass}
+                    </a>
+                  </li>
+                ))}
               <ul />
             </ul>
 
