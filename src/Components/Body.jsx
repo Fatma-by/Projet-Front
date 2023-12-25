@@ -16,6 +16,7 @@ import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
 import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
 import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
 import { Public } from "./Auth";
+import AjoutStudent from "../Components/AjoutStudent/AjoutStudent"
 
 import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
@@ -102,6 +103,8 @@ const Body = () => {
         <Route path="/Eleve" element={<AccessClass />} />
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
+        <Route path="/AjoutStudent" element={<AjoutStudent />} />
+
 
         <Route path="/" element={<Navigate to="/accueil" />} />
         <Route path="*" element={<Navigate to="/accueil" />} />

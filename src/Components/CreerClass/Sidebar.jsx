@@ -69,10 +69,7 @@ function Sidebar({ data }) {
                 data.length >= 0 &&
                 data.map((classItem) => (
                   <li key={classItem.id}>
-                    <a
-                      className="dropdown-item"
-                      href={`/classe/${classItem.id}`}
-                    >
+                    <a className="dropdown-item" href={`/AjoutStudent`}>
                       {classItem.NomClass}
                     </a>
                   </li>

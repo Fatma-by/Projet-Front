@@ -1,6 +1,5 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import Logout from '../Logout/Logout'
 
 
 function CreerClass() {
@@ -9,7 +8,6 @@ function CreerClass() {
     <div className="ClassCreer">
 
     <Sidebar/>
-    <Logout/>
     </div>
 
     </>
