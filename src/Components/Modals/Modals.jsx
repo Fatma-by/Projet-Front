@@ -15,9 +15,7 @@ function Modals({ show, setShow }) {
   const ref = useRef();
   const push = useNavigate();
 
-  const handleClicke = useCallback(() => {
-    push("/AccesClassCreer");
-  }, []);
+ 
 
   const handleDropdownModifyNiveau = (event) => {
     SetslectedNiveau(event.target.textContent);
@@ -27,6 +25,7 @@ function Modals({ show, setShow }) {
   };
   const handleSave = async () => {
     console.log({ className, selectedMatiere, selectedNiveau });
+    setShow(!show)
 
     axios
       .post(`/api/classes/nouvelle-classe`, {
@@ -37,7 +36,7 @@ function Modals({ show, setShow }) {
       })
       .then(async (response) => {
         if (response.data) toast.success("Classe crée avec succés");
-        setTimeout(handleClicke(response.data), 5000);
+        
       })
 
       .catch(function (error) {

@@ -5,17 +5,21 @@ import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 }
 import Navbar from "./Components/Navbar/Navbar";
 
-import React from "react";
 import Body from "./Components/Body";
 import UploadWidget from "./Components/Apploder/Apploder";
 
 const App = () => {
+
+  
+   
+ 
+
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar/>
       <Body />
       
-      <UploadWidget />
+      
     </BrowserRouter>
   );
 };

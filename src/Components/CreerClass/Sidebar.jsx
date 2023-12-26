@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./Sidebar.css";
 import Modals from "../Modals/Modals";
+import {  useNavigate } from "react-router-dom";
 
 function Sidebar({ data }) {
+  const push = useNavigate();
+  const Handelclick = useCallback(() => {
+    push("/user=${id}");
+  }, []);
   const [show, setShow] = useState(false);
+  const [list, setlist] = useState([]);
+
+  
+
   console.log(data);
   const handleToggleSidebar = () => {
     const sidebar = document.querySelector("#sidebar");
     sidebar.classList.toggle("collapsed");
   };
+
+  useEffect(() => {
+    setlist(data)
+
+    console.log (list)
+  },[])
+
+
+
+
   return (
     <div className="wrapper">
       {/* <!-- Sidebar --> */}
@@ -65,11 +84,11 @@ function Sidebar({ data }) {
               Toutes les classes
             </a>
             <ul className="dropdown-menu">
-              {data &&
-                data.length >= 0 &&
+              {
                 data.map((classItem) => (
                   <li key={classItem.id}>
-                    <a className="dropdown-item" href={`/AjoutStudent`}>
+                    {console.log(classItem)}
+                    <a className="dropdown-item" onClick= {Handelclick}>
                       {classItem.NomClass}
                     </a>
                   </li>

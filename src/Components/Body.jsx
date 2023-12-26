@@ -103,7 +103,7 @@ const Body = () => {
         <Route path="/Eleve" element={<AccessClass />} />
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
-        <Route path="/AjoutStudent" element={<AjoutStudent />} />
+        <Route path="/user=${id}" element={<AjoutStudent />} />
 
 
         <Route path="/" element={<Navigate to="/accueil" />} />
