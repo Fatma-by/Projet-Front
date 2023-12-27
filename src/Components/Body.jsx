@@ -21,6 +21,7 @@ import AjoutStudent from "../Components/AjoutStudent/AjoutStudent"
 import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
 import CardList from "./Card/CardList";
+import AcessStudent from "../Components/AjoutStudent/AcessStudent"
 
 import AccesClassCreer from "../Components/CreerClass/AccesClassCreer";
 
@@ -103,7 +104,9 @@ const Body = () => {
         <Route path="/Eleve" element={<AccessClass />} />
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
-        <Route path="/user=${id}" element={<AjoutStudent />} />
+        <Route path="/user/:id" element={<AjoutStudent />} />
+        <Route path="/AcessStudent" element={<AcessStudent />} />
+
 
 
         <Route path="/" element={<Navigate to="/accueil" />} />

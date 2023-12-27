@@ -5,15 +5,14 @@ import {  useNavigate } from "react-router-dom";
 
 function Sidebar({ data }) {
   const push = useNavigate();
-  const Handelclick = useCallback(() => {
-    push("/user=${id}");
-  }, []);
+  // const Handelclick = useCallback(() => {
+  //   push(`/user/${id}`);
+  // }, []);
   const [show, setShow] = useState(false);
   const [list, setlist] = useState([]);
 
   
 
-  console.log(data);
   const handleToggleSidebar = () => {
     const sidebar = document.querySelector("#sidebar");
     sidebar.classList.toggle("collapsed");
@@ -87,8 +86,10 @@ function Sidebar({ data }) {
               {
                 data.map((classItem) => (
                   <li key={classItem.id}>
-                    {console.log(classItem)}
-                    <a className="dropdown-item" onClick= {Handelclick}>
+                   
+                    <a className="dropdown-item" onClick= {()=>{
+                      push("/user/"+classItem._id)
+                    }}>
                       {classItem.NomClass}
                     </a>
                   </li>

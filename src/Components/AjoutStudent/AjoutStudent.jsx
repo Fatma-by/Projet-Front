@@ -5,15 +5,19 @@ import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { authStore } from "../AuthStore/AuthStore";
 import "./AjoutStudent.css";
-
-
+import useSignUpStore from "../AuthStore/SignUpStore";
 
 function AjoutStudent() {
-  const [show, setShow] = useState(false);
+  const {
+    email,
+    emailError,
 
-  const [Mail, setMail] = useState();
+    verifyAndSetEmail,
+  } = useSignUpStore();
+
+  const [show, setShow] = useState(false);
+  const [mail, setMail] = useState();
   const [Prenom, setPrenom] = useState();
   const [Name, setName] = useState();
   const ref = useRef();
@@ -23,17 +27,17 @@ function AjoutStudent() {
   const push = useNavigate();
 
   const handleClicke = useCallback(() => {
-    push("/AccesClassCreer");
+    push("/AcessStudent");
   }, []);
 
   const handleSave = async () => {
-    console.log({ Name, Prenom, Mail });
+    console.log({ Name, Prenom, email });
 
     axios
       .post(`/api/student/nouvelle-student`, {
         NomStudent: Name,
         PrenomStudent: Prenom,
-        AdressMail: Mail,
+        AdressMail: email,
       })
       .then(async (response) => {
         if (response.data) toast.success("Eleve ajouté avec succés");
@@ -45,7 +49,7 @@ function AjoutStudent() {
         if (error.response) {
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
-          toast.error("Classe déjà existant");
+          toast.error("Elève déjà existant");
         } else if (error.request) {
           // The request was made but no response was received
           // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
@@ -60,9 +64,11 @@ function AjoutStudent() {
 
   return (
     <>
-    <div className="student">
-      {show && <AjoutStudent show={show} setShow={setShow} />}
-      <button className="butn" onClick={() => setShow(true)}>Ajouter un élève</button>
+      <div className="student">
+        {show && <AjoutStudent show={show} setShow={setShow} />}
+        <button className="butn" onClick={() => setShow(true)}>
+          Ajouter un élève
+        </button>
       </div>
 
       <Modal show={show} onHide={() => setShow(false)}>
@@ -92,6 +98,7 @@ function AjoutStudent() {
                 ref={refe}
                 onChange={(e) => {
                   setPrenom(e.currentTarget.value);
+                  console.log(e.currentTarget.value);
                 }}
                 autoFocus
               />
@@ -103,10 +110,11 @@ function AjoutStudent() {
                 placeholder="Adresse mail"
                 ref={refes}
                 onChange={(e) => {
-                  setMail(e.currentTarget.value);
+                  verifyAndSetEmail(e.target.value);
                 }}
                 autoFocus
               />
+              {emailError && <p>entrer une adresse mail valide</p>}
             </Form.Group>
           </Form>
         </Modal.Body>

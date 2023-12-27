@@ -44,6 +44,8 @@ function Modals({ show, setShow }) {
         if (error.response) {
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
+          console.log(error.response)
+
           toast.error("Classe déjà existant");
         } else if (error.request) {
           // The request was made but no response was received
