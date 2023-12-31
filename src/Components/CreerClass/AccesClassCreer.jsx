@@ -6,7 +6,6 @@ import Sidebar from "./Sidebar";
 const AccesClassCreer = () => {
   const [id, setId] = authStore((state) => [state.id, state.setId]);
   const [data, setData] = useState([]);
-  console.log(data);
 
   useEffect(() => {
     axios

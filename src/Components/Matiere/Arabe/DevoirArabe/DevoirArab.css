@@ -6,6 +6,48 @@
     background-repeat: no-repeat;
     height: 90vh;
   }
+  .Science{
+    background-image: url("/image/Science.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+  }
+  .classButs{
+    height: 4em;
+    width: 30em;
+    margin: 10px;
+    margin-top: 25px;
+    border-radius: 15px;
+    background:linear-gradient(rgb(2, 77, 48), rgb(110, 222, 131));
+    border: none;
+    transition: all .2s ease-in-out;
+    position: relative;
+    top: 50px;
+}
+.classButs:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgb(199, 199, 199);
+  }
+  .classContainers{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    left:50px;
+    top: 200px;
+    
+  }
+
+
+.classButs p{
+    color:white;
+    font-size: 20px;
+    margin-top: 13px;
+    position: relative;
+    bottom: 10px;
+  }
   
   .classBut{
       height: 4em;

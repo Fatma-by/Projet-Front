@@ -62,10 +62,29 @@ export const classStore = create(
 
       id: "",
       setNomClass: (NomClass) => set((state) => ({ NomClass: NomClass })),
-      setId: (id) => set((state) => ({ id: id })),
-    }),
+      setId: (id) => set((state) => ({ id: id })) ,  
+      
+    } ),
+    
     {
       name: "classState", // name of the item in the storage (must be unique)
+    }
+   
+  ),
+
+ 
+);
+export const studentStore = create(
+  persist(
+    (set, get) => ({
+      NomStudent: "",
+
+      Id: "",
+      setNomStudent: (NomStudent) => set((state) => ({ NomStudent: NomStudent })),
+      setId: (Id) => set((state) => ({ Id: Id })),
+    }),
+    {
+      name: "studentState", // name of the item in the storage (must be unique)
     }
   )
 );

@@ -16,12 +16,14 @@ import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
 import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
 import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
 import { Public } from "./Auth";
-import AjoutStudent from "../Components/AjoutStudent/AjoutStudent"
+import AjoutStudent from "../Components/AjoutStudent/AjoutStudent";
+import DeuxiemeAnneeCours from "../Components/Matiere/Science/DeuxiemeAnneeCours"
+import TroisièmeAnneeCours from "../Components/Matiere/Science/TroisièmeAnneeCours";
 
 import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
 
 import CardList from "./Card/CardList";
-import AcessStudent from "../Components/AjoutStudent/AcessStudent"
+import AccessStudent from "../Components/AjoutStudent/AcessStudent";
 
 import AccesClassCreer from "../Components/CreerClass/AccesClassCreer";
 
@@ -102,12 +104,13 @@ const Body = () => {
         <Route path="/français" element={<Français />} />
         <Route path="/Enseignant" element={<CreerClass />} />
         <Route path="/Eleve" element={<AccessClass />} />
+        <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeCours />} />
+        <Route path="/TroisiemeAnnee" element={<TroisièmeAnneeCours />}/>
+
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
         <Route path="/user/:id" element={<AjoutStudent />} />
-        <Route path="/AcessStudent" element={<AcessStudent />} />
-
-
+        <Route path="/classState/:id/AccessStudent" element={<AccessStudent />} />
 
         <Route path="/" element={<Navigate to="/accueil" />} />
         <Route path="*" element={<Navigate to="/accueil" />} />

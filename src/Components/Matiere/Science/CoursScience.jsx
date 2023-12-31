@@ -1,18 +1,24 @@
 import React from "react";
 import "../Arabe/CoursArabe/ArabeMatiere.css";
+import {  useNavigate } from "react-router-dom";
+
 
 function CoursScience() {
+  const push = useNavigate();
+
   return (
     <>
     <div className="class">
       <div className="classContainer">
-        <button className="classBut">
-          <p>السنة الاولى</p>
-        </button>
-        <button className="classBut">
+        
+        <button className="classBut" onClick={()=>{
+                      push("/DeuxiemeAnnee")
+                    }}>
           <p> السنة الثانية</p>
         </button>
-        <button className="classBut">
+        <button className="classBut" onClick={()=>{
+                      push("/TroisiemeAnnee")
+                    }}>
           <p>السنة الثالثة</p>
         </button>
         <button className="classBut">

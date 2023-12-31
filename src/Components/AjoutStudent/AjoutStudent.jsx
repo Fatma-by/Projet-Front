@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "./AjoutStudent.css";
 import useSignUpStore from "../AuthStore/SignUpStore";
+import { useParams } from "react-router-dom";
 
 function AjoutStudent() {
   const {
@@ -23,12 +24,14 @@ function AjoutStudent() {
   const ref = useRef();
   const refe = useRef();
   const refes = useRef();
+  const { id } = useParams();
+  console.log(id);
 
   const push = useNavigate();
 
   const handleClicke = useCallback(() => {
-    push("/AcessStudent");
-  }, []);
+    push(`/classState/${id}/AccessStudent`);
+  }, [id, push]);
 
   const handleSave = async () => {
     console.log({ Name, Prenom, email });
