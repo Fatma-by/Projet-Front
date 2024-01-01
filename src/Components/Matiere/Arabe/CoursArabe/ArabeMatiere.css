@@ -7,6 +7,14 @@
   height: 90vh;
 }
 
+.Exercice{
+  background-image: url("image/Exercice.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+}
+
 .classBut{
     height: 4em;
     width: 30em;

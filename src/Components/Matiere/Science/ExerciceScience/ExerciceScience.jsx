@@ -1,12 +1,18 @@
 import React from "react";
-import "../Arabe/DevoirArabe/DevoirArab.css";
+import "../../Arabe/CoursArabe/ArabeMatiere.css";
+import {  useNavigate } from "react-router-dom";
 
-function DevoirScience() {
+
+function ExerciceScience() {
+  const push = useNavigate();
+
   return (
     <>
-    <div className="classe">
+    <div className="classes">
       <div className="classContainer">
-        <button className="classBut">
+        <button className="classBut" onClick={()=>{
+                      push("/PremiereAnnee")
+                    }}>
           <p>السنة الاولى</p>
         </button>
         <button className="classBut">
@@ -36,4 +42,4 @@ function DevoirScience() {
   );
 }
 
-export default DevoirScience;
+export default ExerciceScience;

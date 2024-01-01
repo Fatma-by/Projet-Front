@@ -1,20 +1,19 @@
 import React from 'react'
-import "../Arabe/CoursArabe/ArabeMatiere.css";
+import "../../Arabe/CoursArabe/ArabeMatiere.css";
 
 
-function DeuxiemeAnneeCours() {
+function PremiereAnneeExercice() {
   return (
-
     <>
-    <div className='Science'>
+    <div className='Exercice'>
         <div className='classContainers'>
-    <button className="classButs">
+    <button className="classBut">
           <p>الثلاثي الاول</p>
         </button>
-        <button className="classButs">
+        <button className="classBut">
           <p>  الثلاثي الثاني</p>
         </button>
-        <button className="classButs">
+        <button className="classBut">
           <p>الثلاثي الثالث</p>
         </button>
         </div>
@@ -23,4 +22,4 @@ function DeuxiemeAnneeCours() {
   )
 }
 
-export default DeuxiemeAnneeCours
+export default PremiereAnneeExercice

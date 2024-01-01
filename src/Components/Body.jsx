@@ -10,17 +10,22 @@ import AccessClass from "./AccessClass/AccessClass";
 import DevoirArabe from "../Components/Matiere/Arabe/DevoirArabe/DevoirArabe";
 import ExerciceArabe from "../Components/Matiere/Arabe/ExerciceArabe/ExerciceArabe";
 import CoursArabe from "../Components/Matiere/Arabe/CoursArabe/CoursArabe";
-import DevoirScience from "../Components/Matiere/Science/DevoirScience";
+import DevoirScience from "./Matiere/Science/DevoirScience/DevoirScience";
 import CoursScience from "../Components/Matiere/Science/CoursScience";
 import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
 import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
 import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
 import { Public } from "./Auth";
 import AjoutStudent from "../Components/AjoutStudent/AjoutStudent";
-import DeuxiemeAnneeCours from "../Components/Matiere/Science/DeuxiemeAnneeCours"
-import TroisièmeAnneeCours from "../Components/Matiere/Science/TroisièmeAnneeCours";
+import DeuxiemeAnneeDevoir from "./Matiere/Science/DevoirScience/DeuxiemeAnneeDevoir";
+import TroisièmeAnneeDevoir from "./Matiere/Science/DevoirScience/TroisièmeAnneeDevoir";
+import QuatriemeAnneeDevoir from "./Matiere/Science/DevoirScience/QuatriemeAnneeDevoir";
+import CinquiemeAnneeDevoir from "./Matiere/Science/DevoirScience/CinquiemeAnneeDevoir";
 
-import ExerciceScience from "../Components/Matiere/Science/ExerciceScience";
+import SixiemeAnneeDevoir from "./Matiere/Science/DevoirScience/SixiemeAnneeDevoir";
+
+import ExerciceScience from "./Matiere/Science/ExerciceScience/ExerciceScience";
+import PremiereAnneeExercice from "./Matiere/Science/ExerciceScience/PremiereAnneeExercice";
 
 import CardList from "./Card/CardList";
 import AccessStudent from "../Components/AjoutStudent/AcessStudent";
@@ -104,13 +109,22 @@ const Body = () => {
         <Route path="/français" element={<Français />} />
         <Route path="/Enseignant" element={<CreerClass />} />
         <Route path="/Eleve" element={<AccessClass />} />
-        <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeCours />} />
-        <Route path="/TroisiemeAnnee" element={<TroisièmeAnneeCours />}/>
+        <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeDevoir />} />
+        <Route path="/TroisiemeAnnee" element={<TroisièmeAnneeDevoir />} />
+        <Route path="/QuatriemeAnnee" element={<QuatriemeAnneeDevoir />} />
+        <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeDevoir />} />
+
+        <Route path="/SixiemeAnnee" element={<SixiemeAnneeDevoir />} />
+        <Route path="/PremiereAnnee" element={<PremiereAnneeExercice />} />
+
 
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />
         <Route path="/user/:id" element={<AjoutStudent />} />
-        <Route path="/classState/:id/AccessStudent" element={<AccessStudent />} />
+        <Route
+          path="/classState/:id/AccessStudent"
+          element={<AccessStudent />}
+        />
 
         <Route path="/" element={<Navigate to="/accueil" />} />
         <Route path="*" element={<Navigate to="/accueil" />} />
