@@ -26,6 +26,15 @@ import SixiemeAnneeDevoir from "./Matiere/Science/DevoirScience/SixiemeAnneeDevo
 
 import ExerciceScience from "./Matiere/Science/ExerciceScience/ExerciceScience";
 import PremiereAnneeExercice from "./Matiere/Science/ExerciceScience/PremiereAnneeExercice";
+import DeuxiemeAnneeExercice from "./Matiere/Science/ExerciceScience/DeuxiemeAnneeExercice";
+
+import TroisiemeAnneeExercice from "./Matiere/Science/ExerciceScience/TroisiemeAnneeExercice";
+
+import QuatriemeAnneeExercice from "./Matiere/Science/ExerciceScience/QuatriemeAnneExercice";
+
+import CinquiemeAnneeExercice from "./Matiere/Science/ExerciceScience/CinquiemeAnneeExercice";
+import SixiemeAnneeExercice from "./Matiere/Science/ExerciceScience/SixiemeAnneeExercice";
+
 
 import CardList from "./Card/CardList";
 import AccessStudent from "../Components/AjoutStudent/AcessStudent";
@@ -116,6 +125,12 @@ const Body = () => {
 
         <Route path="/SixiemeAnnee" element={<SixiemeAnneeDevoir />} />
         <Route path="/PremiereAnnee" element={<PremiereAnneeExercice />} />
+        <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeExercice />} />
+        <Route path="/TroisiemeAnnee" element={<TroisiemeAnneeExercice />} />
+        <Route path="/QuatriemeAnnee" element={<QuatriemeAnneeExercice />} />
+        <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeExercice />} />
+
+        <Route path="/SixiemeAnnee" element={<SixiemeAnneeExercice />} />
 
 
         <Route path="/Cours" element={<CoursArabe />} />
