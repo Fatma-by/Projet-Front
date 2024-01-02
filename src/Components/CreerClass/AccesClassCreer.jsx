@@ -9,7 +9,7 @@ const AccesClassCreer = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/allclasses/toutes-les-classes/?user=${id}`)
+      .get(`/api/allclasses/toutes-les-classes    ?user=${id}`)
       .then((response) => {
         console.log(response, "here");
         setData(response.data);

@@ -24,7 +24,7 @@ function Modals({ show, setShow }) {
     SetslectedMatiere(event.target.textContent);
   };
   const handleSave = async () => {
-    console.log({ className, selectedMatiere, selectedNiveau });
+    
     setShow(!show)
 
     axios
@@ -78,6 +78,7 @@ function Modals({ show, setShow }) {
                 }}
                 autoFocus
               />
+              
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Niveau Educatif</Form.Label>
@@ -152,6 +153,8 @@ function Modals({ show, setShow }) {
                 </ul>
               </div>
             </Form.Group>
+           
+           
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Matières</Form.Label>
               <div className="dropdown">
@@ -201,6 +204,8 @@ function Modals({ show, setShow }) {
                 </ul>
               </div>
             </Form.Group>
+            
+        
           </Form>
         </Modal.Body>
         <Modal.Footer>

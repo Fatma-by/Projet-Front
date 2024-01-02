@@ -16,6 +16,7 @@ function AjoutStudent() {
 
     verifyAndSetEmail,
   } = useSignUpStore();
+  console.log(window.location.pathname)
 
   const [show, setShow] = useState(false);
   const [mail, setMail] = useState();
@@ -25,7 +26,6 @@ function AjoutStudent() {
   const refe = useRef();
   const refes = useRef();
   const { id } = useParams();
-  console.log(id);
 
   const push = useNavigate();
 
@@ -41,6 +41,7 @@ function AjoutStudent() {
         NomStudent: Name,
         PrenomStudent: Prenom,
         AdressMail: email,
+        class:id
       })
       .then(async (response) => {
         if (response.data) toast.success("Eleve ajouté avec succés");

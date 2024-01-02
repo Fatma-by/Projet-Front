@@ -189,6 +189,8 @@ const Body = () => {
 
         <Route path="/" element={<Navigate to="/accueil" />} />
         <Route path="*" element={<Navigate to="/accueil" />} />
+
+        
       </Routes>
     </>
   );

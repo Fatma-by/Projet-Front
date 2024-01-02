@@ -5,12 +5,13 @@ import { classStore } from "../AuthStore/AuthStore";
 function AccessStudent() {
   // Utilisez classStore pour obtenir l'ID de la classe
   const [classId] = classStore((state) => [state.id]);
-  console.log(classId);
+  console.log(classId ,"here");
+  console.log(window.location.pathname.split("/")[2])
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/Allstudents/Allstudent/?classState=${classId}`)
+    axios.get(`/api/Allstudents/Allstudent/?classState=${window.location.pathname.split("/")[2]}`)
       .then((response) => {
         console.log(data);
         setData(response.data); // Mettez à jour l'état avec les données récupérées
