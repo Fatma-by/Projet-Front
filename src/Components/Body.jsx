@@ -13,8 +13,8 @@ import CoursArabe from "../Components/Matiere/Arabe/CoursArabe/CoursArabe";
 import DevoirScience from "./Matiere/Science/DevoirScience/DevoirScience";
 import CoursScience from "../Components/Matiere/Science/CoursScience";
 import CoursFrancais from "../Components/Matiere/Français/CoursFrancais";
-import DevoirFrancais from "../Components/Matiere/Français/DevoirFrancais";
-import ExerciceFrancais from "../Components/Matiere/Français/ExerciceFrancais";
+import DevoirFrancais from "./Matiere/Français/DevoirFrancais/DevoirFrancais";
+import ExerciceFrancais from "./Matiere/Français/ExerciceFrancais/ExerciceFrancais";
 import { Public } from "./Auth";
 import AjoutStudent from "../Components/AjoutStudent/AjoutStudent";
 import DeuxiemeAnneeDevoir from "./Matiere/Science/DevoirScience/DeuxiemeAnneeDevoir";
@@ -27,6 +27,12 @@ import SixiemeAnneeDevoir from "./Matiere/Science/DevoirScience/SixiemeAnneeDevo
 import ExerciceScience from "./Matiere/Science/ExerciceScience/ExerciceScience";
 import PremiereAnneeExercice from "./Matiere/Science/ExerciceScience/PremiereAnneeExercice";
 import DeuxiemeAnneeExercice from "./Matiere/Science/ExerciceScience/DeuxiemeAnneeExercice";
+import PremiereAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/PremiereAnneeDevoirFrancais";
+import DeuxiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/DeuxiemeAnneeFranais";
+import TroisiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/TroisiemeAnneeFrancais";
+import QuatriemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/QuatriemeAnneeFrancais";
+import CinquiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/CinquiemeAnneeFrancais";
+import SixiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/SixiemeAnneeFrancais";
 
 import TroisiemeAnneeExercice from "./Matiere/Science/ExerciceScience/TroisiemeAnneeExercice";
 
@@ -34,7 +40,6 @@ import QuatriemeAnneeExercice from "./Matiere/Science/ExerciceScience/QuatriemeA
 
 import CinquiemeAnneeExercice from "./Matiere/Science/ExerciceScience/CinquiemeAnneeExercice";
 import SixiemeAnneeExercice from "./Matiere/Science/ExerciceScience/SixiemeAnneeExercice";
-
 
 import CardList from "./Card/CardList";
 import AccessStudent from "../Components/AjoutStudent/AcessStudent";
@@ -131,7 +136,34 @@ const Body = () => {
         <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeExercice />} />
 
         <Route path="/SixiemeAnnee" element={<SixiemeAnneeExercice />} />
-
+        <Route
+          path="/PremiereAnneeFrancais"
+          element={<PremiereAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/PremiereAnneeFrancais"
+          element={<PremiereAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/DeuxiemeAnneeFrancais"
+          element={<DeuxiemeAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/TroisiemeAnneeFrancais"
+          element={<TroisiemeAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/QuatriemeAnneeFrancais"
+          element={<QuatriemeAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/CinquiemeAnneeFrancais"
+          element={<CinquiemeAnneeDevoirFrancais />}
+        />
+        <Route
+          path="/SixiemeAnneeFrancais"
+          element={<SixiemeAnneeDevoirFrancais />}
+        />
 
         <Route path="/Cours" element={<CoursArabe />} />
         <Route path="/AccesClassCreer" element={<AccesClassCreer />} />

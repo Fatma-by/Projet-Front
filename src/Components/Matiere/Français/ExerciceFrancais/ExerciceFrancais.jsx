@@ -1,12 +1,14 @@
-import React from "react";
-import "../Arabe/ExerciceArabe/ExerciceArab.css";
+import React from "react"; 
+import "../../Arabe/ExerciceArabe/ExerciceArab.css";
+
 
 function CoursFrancais() {
+
   return (
     <>
     <div className="classes">
       <div className="classContainer">
-        <button className="classBut">
+        <button className="classBut" >
           <p>Première Année</p>
         </button>
         <button className="classBut">
