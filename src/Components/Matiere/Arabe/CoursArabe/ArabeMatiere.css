@@ -22,6 +22,14 @@
   background-repeat: no-repeat;
   height: 90vh;
 }
+.ExerciceFrancais{
+  background-image: url("image/ExerciceFrancais.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+
+}
 
 .classBut{
     height: 4em;

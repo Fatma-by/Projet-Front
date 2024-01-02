@@ -33,6 +33,13 @@ import TroisiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/Tro
 import QuatriemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/QuatriemeAnneeFrancais";
 import CinquiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/CinquiemeAnneeFrancais";
 import SixiemeAnneeDevoirFrancais from "./Matiere/Français/DevoirFrancais/SixiemeAnneeFrancais";
+import PremiereAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/PremiereAnneeExerciceFrancais.jsx"
+import DeuxiemeAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/DeuxiemeAnneeExerciceFrancais.jsx";
+import TroisiemeAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/TroisiemeAnneeExerciceFrancais.jsx";
+import QuatriemeAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/QuatriemeAnneeExerciceFrancais.jsx";
+import CinquiemeAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/CinquiemeAnneeExerciceFrancais.jsx";
+import SixiemeAnneeExerciceFrancais from "./Matiere/Français/ExerciceFrancais/SixiemeAnneeExerciceFrancais.jsx";
+
 
 import TroisiemeAnneeExercice from "./Matiere/Science/ExerciceScience/TroisiemeAnneeExercice";
 
@@ -127,15 +134,22 @@ const Body = () => {
         <Route path="/TroisiemeAnnee" element={<TroisièmeAnneeDevoir />} />
         <Route path="/QuatriemeAnnee" element={<QuatriemeAnneeDevoir />} />
         <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeDevoir />} />
-
         <Route path="/SixiemeAnnee" element={<SixiemeAnneeDevoir />} />
         <Route path="/PremiereAnnee" element={<PremiereAnneeExercice />} />
         <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeExercice />} />
         <Route path="/TroisiemeAnnee" element={<TroisiemeAnneeExercice />} />
         <Route path="/QuatriemeAnnee" element={<QuatriemeAnneeExercice />} />
         <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeExercice />} />
-
         <Route path="/SixiemeAnnee" element={<SixiemeAnneeExercice />} />
+        <Route path="/PremiereAnneeExercice" element={<PremiereAnneeExerciceFrancais />} />
+        <Route path="/DeuxiemeAnneeExercice" element={<DeuxiemeAnneeExerciceFrancais />} />
+        <Route path="/TroisiemeAnneeExercice" element={<TroisiemeAnneeExerciceFrancais />} />
+        <Route path="/QuatriemeAnneeExercice" element={<QuatriemeAnneeExerciceFrancais />} />
+        <Route path="/CinquiemeAnneeExercice" element={<CinquiemeAnneeExerciceFrancais />} />
+        <Route path="/SixiemeAnneeExercice" element={<SixiemeAnneeExerciceFrancais />} />
+
+        
+
         <Route
           path="/PremiereAnneeFrancais"
           element={<PremiereAnneeDevoirFrancais />}
