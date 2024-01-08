@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useRef, useState, useCallback } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -8,41 +8,80 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function AjoutDevoir() {
-    const ref = useRef();
-    const [selectedMatiere, SetslectedMatiere] = useState();
-    const [selectedNiveau, SetslectedNiveau] = useState();
-    const [selectedTrimestre, SetslectedTrimestre] = useState();
-    const [selectedDocument, SetslectedDocument] = useState();
-
-
-    const [show, setShow] = useState(false);
-
-
-
-
-
-    const handleDropdownModifyNiveau = (event) => {
-        SetslectedNiveau(event.target.textContent);
-      };
-      const handleDropdownModifyDocument = (event) => {
-        SetslectedDocument(event.target.textContent);
-      };
-      const handleDropdownModify = (event) => {
-        SetslectedMatiere(event.target.textContent);
-      };
-      const handleDropdownModifyTrimestre = (event) => {
-        SetslectedTrimestre(event.target.textContent);
-      };
-      const handleSave = async () => {
+  const ref = useRef();
+  const [selectedMatiere, SetslectedMatiere] = useState('fdsfsdf');
+  const [selectedNiveau, SetslectedNiveau] = useState('dqsfsdf');
+  const [selectedTrimestre, SetslectedTrimestre] = useState('fdsfsdf');
+  const [selectedDocument, SetslectedDocument] = useState('fdfsdfsd');
+  const [Name, setName] = useState('fdsfsdfsdfsdf');
+  const [show, setShow] = useState(false);
+  const [file, setFile] = useState(null);
+  function handleFileSelect(e) {
+    console.log(e)
+    const fileInput = event.target;
     
-        setShow(!show)}
-    
+    if (fileInput.files.length > 0) {
+        const selectedFile = fileInput.files[0];
+  
+        // Create a FileReader
+        const reader = new FileReader();
+  
+        // Define the onload event handler
+        reader.onload = function (e) {
+            const fileContent = e.target.result;
+            console.log('File Content:', fileContent);
+            setFile(fileContent)
+  
+            // You can use the file content here as needed
+        };
+  
+        // Read the file as text or data URL, depending on your needs
+        // For example, to read as text:
+        // reader.readAsText(selectedFile);
+  
+        // To read as data URL (Base64 encoded):
+        reader.readAsDataURL(selectedFile);
+    }
+  }
+  
+  const handleFileChange = (e) => {
+    handleFileSelect()
+  };
+
+
+  const handleDropdownModifyNiveau = (event) => {
+    SetslectedNiveau(event.target.textContent);
+  };
+  const handleDropdownModifyDocument = (event) => {
+    SetslectedDocument(event.target.textContent);
+  };
+  const handleDropdownModify = (event) => {
+    SetslectedMatiere(event.target.textContent);
+  };
+  const handleDropdownModifyTrimestre = (event) => {
+    SetslectedTrimestre(event.target.textContent);
+  };
+  const handleSave = async () => {
+    try {
+      console.log(file)
+      const response = await axios.post("/api/api/upload",{file} ,{
+        headers : { "name" : Name}
+      });
+
+      console.log(response.data);
+      toast.success("Fichier ajouté avec succès!");
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du fichier", error.response);
+      toast.error("Erreur lors de l'envoi du fichier");
+    }
+
+    setShow(false);
+  };
 
 
   return (
-<>
-<div className="student">
-        
+    <>
+      <div className="student">
         <button className="butn" onClick={() => setShow(true)}>
           Ajouter un Devoir
         </button>
@@ -58,6 +97,7 @@ function AjoutDevoir() {
               <Form.Label>Nom de l'enseignant (e)</Form.Label>
               <Form.Control
                 type="text"
+                name="Name"
                 placeholder="nom de l'enseigant"
                 ref={ref}
                 onChange={(e) => {
@@ -118,8 +158,8 @@ function AjoutDevoir() {
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Matière</Form.Label>
-             
-                <div className="dropdown">
+
+              <div className="dropdown">
                 <button
                   style={{
                     width: "100%",
@@ -241,8 +281,8 @@ function AjoutDevoir() {
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Trimestre</Form.Label>
-             
-                <div className="dropdown">
+
+              <div className="dropdown">
                 <button
                   style={{
                     width: "100%",
@@ -292,9 +332,10 @@ function AjoutDevoir() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Ajouter Fichier</Form.Label>
               <Form.Control
-                type="File"
+                type="file"
+                onChange={handleFileChange}
+
                 placeholder="nom de l'enseigant"
-                
                 autoFocus
               />
             </Form.Group>
@@ -309,11 +350,8 @@ function AjoutDevoir() {
           </Button>
         </Modal.Footer>
       </Modal>
-
-</>
-
-
-)
+    </>
+  );
 }
 
-export default AjoutDevoir
+export default AjoutDevoir;

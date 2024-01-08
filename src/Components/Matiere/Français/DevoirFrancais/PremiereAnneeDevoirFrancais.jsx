@@ -7,7 +7,7 @@ function PremiereAnneeDevoirFrancais() {
   return (
     <>
 
-    <AjoutDevoir/>
+<AjoutDevoir/>
       <div className='Francais'>
         <div className='classContainers'>
           <button
@@ -34,7 +34,7 @@ function PremiereAnneeDevoirFrancais() {
           {selectedTrim === 'Premiere' && (
             <div>
              
-              <p>Première Trimèstre</p>
+          
             </div>
           )}
           {selectedTrim === 'Deuxieme' && (
