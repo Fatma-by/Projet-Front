@@ -52,6 +52,7 @@ import CardList from "./Card/CardList";
 import AccessStudent from "../Components/AjoutStudent/AcessStudent";
 
 import AccesClassCreer from "../Components/CreerClass/AccesClassCreer";
+import AccessDevoir from "../Components/AjoutDevoir/AcessDevoir.jsx"
 
 const Body = () => {
   const location = useLocation();
@@ -103,7 +104,7 @@ const Body = () => {
 
               <Routes>
                 <Route>
-                  <Route path="/devoir" element={<DevoirScience />} />
+                  <Route path="/Devoir" element={<DevoirScience />} />
                   <Route path="/Exercices" element={<ExerciceScience />} />
                   <Route path="/Cours" element={<CoursScience />} />
                 </Route>
@@ -130,7 +131,7 @@ const Body = () => {
         <Route path="/français" element={<Français />} />
         <Route path="/Enseignant" element={<CreerClass />} />
         <Route path="/Eleve" element={<AccessClass />} />
-        <Route path="/DeuxiemeAnnee" element={<DeuxiemeAnneeDevoir />} />
+        <Route path="Science/devoir/DeuxiemeAnnee" element={<DeuxiemeAnneeDevoir />} />
         <Route path="/TroisiemeAnnee" element={<TroisièmeAnneeDevoir />} />
         <Route path="/QuatriemeAnnee" element={<QuatriemeAnneeDevoir />} />
         <Route path="/CinquiemeAnnee" element={<CinquiemeAnneeDevoir />} />
@@ -147,6 +148,8 @@ const Body = () => {
         <Route path="/QuatriemeAnneeExercice" element={<QuatriemeAnneeExerciceFrancais />} />
         <Route path="/CinquiemeAnneeExercice" element={<CinquiemeAnneeExerciceFrancais />} />
         <Route path="/SixiemeAnneeExercice" element={<SixiemeAnneeExerciceFrancais />} />
+        <Route path="/AccessDevoir" element={<AccessDevoir />} />
+
 
         
 

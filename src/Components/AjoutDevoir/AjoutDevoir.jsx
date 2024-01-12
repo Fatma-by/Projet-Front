@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 function AjoutDevoir() {
   const ref = useRef();
+  const push = useNavigate();
+
   const [selectedMatiere, SetslectedMatiere] = useState('fdsfsdf');
   const [selectedNiveau, SetslectedNiveau] = useState('dqsfsdf');
   const [selectedTrimestre, SetslectedTrimestre] = useState('fdsfsdf');
@@ -47,6 +49,9 @@ function AjoutDevoir() {
   const handleFileChange = (e) => {
     handleFileSelect()
   };
+  const handleClicke = useCallback(() => {
+    push(`/AccessDevoir`);
+  }, []);
 
 
   const handleDropdownModifyNiveau = (event) => {
@@ -65,8 +70,19 @@ function AjoutDevoir() {
     try {
       console.log(file)
       const response = await axios.post("/api/api/upload",{file} ,{
-        headers : { "name" : Name}
-      });
+        headers : { "name" : Name,
+        "selectedNiveau": selectedNiveau,
+        "selectedTrimestre": selectedTrimestre,
+        "selectedMatiere": selectedMatiere
+        
+      }
+      }).then(async (response) => {
+        console.log(response.data)
+        if (response.data) toast.success("Eleve ajouté avec succés");
+        setTimeout(handleClicke(response.data), 5000);
+      })
+
+      
 
       console.log(response.data);
       toast.success("Fichier ajouté avec succès!");
@@ -238,6 +254,7 @@ function AjoutDevoir() {
                     <a
                       className="dropdown-item"
                       href="#"
+                      value="deuxieme"
                       onClick={handleDropdownModifyNiveau}
                     >
                       {" "}
