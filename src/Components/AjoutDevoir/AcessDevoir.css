@@ -1,27 +1,53 @@
-/* Ajoutez ces styles dans votre fichier CSS ou directement dans votre composant React si vous utilisez des styles en ligne */
-
 .card {
-    display: inline-block; /* Affiche les cartes en ligne */
-    margin-right: 20px; /* Espace entre les cartes, ajustez la valeur selon vos préférences */
-    border: 1px solid #ccc; /* Ajoute une bordure pour séparer visuellement les cartes */
-    border-radius: 8px; /* Ajoute des coins arrondis à la carte */
-    overflow: hidden; /* Assurez-vous que le contenu ne dépasse pas la carte */
-  }
-  
-  .card-body {
-    padding: 15px; /* Ajoute un espacement interne au contenu de la carte */
-  }
-  
-  .card-title {
-    font-size: 1.25rem; /* Ajustez la taille de la police du titre selon vos préférences */
-  }
-  
-  .card-text {
-    margin-bottom: 10px; /* Espacement entre les éléments de texte dans la carte */
-  }
-  
-  .btn-primary {
-    display: block; /* Fait du lien un élément de bloc pour occuper toute la largeur de la carte */
-    margin-top: 10px; /* Espacement entre le texte et le bouton */
-  }
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 400px; /* Définir la largeur fixe des cartes */
+  box-sizing: border-box; /* Inclure la bordure et le rembourrage dans la largeur totale */
+  background-color:#f0f0f0;
+  margin: 25px;
+  position: relative;
+  top: 550px;
+  left : 50px;
+}
+.card:hover{
+  transform: translateY(-0.5rem);
+  box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  display: block;
+  margin-top: 10px;
+}
+
+/* .card-Container {
+ 
+  display: grid;
+  grid-template-columns: 450px 450px 450px;
+  grid-template-rows: 250px 250px 250px;
+
+  justify-content: start;
+
+  position: relative;
+  top: 550px;
+  left : 50px;
+
+} */
+
+.flex{display: flex;flex-wrap: wrap;}
+
+
   

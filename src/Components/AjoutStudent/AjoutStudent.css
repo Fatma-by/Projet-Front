@@ -1,24 +1,28 @@
-.student {
-    margin: 0;
-    background-image: url("image/Design sans titre (12).png");
-   
-    background-repeat: no-repeat;
+.student{
+  background-image: url("/image/1.png");
+  background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
     height: 90vh;
+    display: grid;
+  grid-template-columns: 450px 450px ;
+  grid-template-rows: 250px 250px ;
+
+  justify-content: start;
 }
 
 .butn{
     height: 4em;
-    width: 30em;
+    width: 20em;
     margin: 10px;
     margin-top: 25px;
-    border-radius: 15px;
-    background:linear-gradient(rgb(62, 49, 238), rgb(255, 116, 116));
+    border-radius: 05px;
+    background:linear-gradient(rgb(201, 200, 211), rgb(255, 116, 116));
     border: none;
     transition: all .2s ease-in-out;
     position: relative;
-    top: 250px;
+    top: 50px;
+    left:85%;
 }
 .butn:hover{
     transform: scale(1.1);
@@ -41,3 +45,32 @@
     position: relative;
     bottom: 10px;
   }
+  .btn1{
+    border: none;
+    padding: 0px;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    margin: 54px 18px 12px;
+    background-color: white;
+    border-radius: 18px;
+    border-color: black;
+    display: inline-block;
+    box-shadow: rgba(39, 70, 209, 0.06) 0px 2px 0px;
+    width: 13.5rem;
+    height: 8.1rem;
+  }
+  .btn1-p{
+    color:rgb(6, 6, 6);
+    font-size: 16px;
+    margin-top: 13px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .btn1:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgb(199, 199, 199);
+  }
+
+ 

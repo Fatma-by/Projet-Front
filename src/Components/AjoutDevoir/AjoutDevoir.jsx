@@ -73,18 +73,14 @@ function AjoutDevoir() {
         headers : { "name" : Name,
         "selectedNiveau": selectedNiveau,
         "selectedTrimestre": selectedTrimestre,
-        "selectedMatiere": selectedMatiere
+        "selectedMatiere": selectedMatiere,
+        "selectednature" : selectedDocument
         
       }
       }).then(async (response) => {
-        console.log(response.data)
-        if (response.data) toast.success("Eleve ajouté avec succés");
-        setTimeout(handleClicke(response.data), 5000);
+        if (response.data) toast.success("Ressource created successfully");
+   
       })
-
-      
-
-      console.log(response.data);
       toast.success("Fichier ajouté avec succès!");
     } catch (error) {
       console.error("Erreur lors de l'envoi du fichier", error.response);

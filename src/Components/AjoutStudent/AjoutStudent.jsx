@@ -16,7 +16,7 @@ function AjoutStudent() {
 
     verifyAndSetEmail,
   } = useSignUpStore();
-  console.log(window.location.pathname)
+  console.log(window.location.pathname);
 
   const [show, setShow] = useState(false);
   const [mail, setMail] = useState();
@@ -41,7 +41,7 @@ function AjoutStudent() {
         NomStudent: Name,
         PrenomStudent: Prenom,
         AdressMail: email,
-        class:id
+        class: id,
       })
       .then(async (response) => {
         if (response.data) toast.success("Eleve ajouté avec succés");
@@ -49,29 +49,21 @@ function AjoutStudent() {
       })
 
       .catch(function (error) {
-        //axios handel error
         if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
           toast.error("Elève déjà existant");
         } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
       });
   };
-
+  0;
   return (
     <>
-      <div className="student">
-        {show && <AjoutStudent show={show} setShow={setShow} />}
-        <button className="butn" onClick={() => setShow(true)}>
-          Ajouter un élève
+      <div>
+        <button className="btn1" onClick={() => setShow(true)}>
+          <p className="btn1-p">Ajouter un élève</p>
         </button>
       </div>
 

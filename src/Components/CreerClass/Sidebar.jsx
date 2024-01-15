@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import "./Sidebar.css";
 import Modals from "../Modals/Modals";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar({ data }) {
   const push = useNavigate();
@@ -11,21 +11,16 @@ function Sidebar({ data }) {
   const [show, setShow] = useState(false);
   const [list, setlist] = useState([]);
 
-  
-
   const handleToggleSidebar = () => {
     const sidebar = document.querySelector("#sidebar");
     sidebar.classList.toggle("collapsed");
   };
 
   useEffect(() => {
-    setlist(data)
+    setlist(data);
 
-    console.log (list)
-  },[])
-
-
-
+    console.log(list);
+  }, []);
 
   return (
     <div className="wrapper">
@@ -83,17 +78,18 @@ function Sidebar({ data }) {
               Toutes les classes
             </a>
             <ul className="dropdown-menu">
-              {
-                data.map((classItem) => (
-                  <li key={classItem.id}>
-                   
-                    <a className="dropdown-item" onClick= {()=>{
-                      push("/user/"+classItem._id)
-                    }}>
-                      {classItem.NomClass}
-                    </a>
-                  </li>
-                ))}
+              {data.map((classItem) => (
+                <li key={classItem.id}>
+                  <a
+                    className="dropdown-item"
+                    onClick={() => {
+                      push("/user/" + classItem._id);
+                    }}
+                  >
+                    {classItem.NomClass}
+                  </a>
+                </li>
+              ))}
               <ul />
             </ul>
 

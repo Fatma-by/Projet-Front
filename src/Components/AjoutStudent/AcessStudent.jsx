@@ -1,33 +1,49 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { classStore } from "../AuthStore/AuthStore";
+import AjoutStudent from "./AjoutStudent";
+import "./AjoutStudent.css";
+import Sidebar from "../CreerClass/Sidebar";
 
 function AccessStudent() {
-  // Utilisez classStore pour obtenir l'ID de la classe
   const [classId] = classStore((state) => [state.id]);
-  console.log(classId ,"here");
-  console.log(window.location.pathname.split("/")[2])
+  console.log(classId, "here");
+  console.log(window.location.pathname.split("/")[2]);
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/Allstudents/Allstudent/?classState=${window.location.pathname.split("/")[2]}`)
+    axios
+      .get(
+        `/api/Allstudents/Allstudent/?classState=${
+          window.location.pathname.split("/")[2]
+        }`
+      )
       .then((response) => {
         console.log(data);
-        setData(response.data); // Mettez à jour l'état avec les données récupérées
+        setData(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [classId]); // Utilisez classId dans le tableau de dépendances
+  }, [classId]);
 
   return (
     <>
-      <ul>
-        {data.map((studentItem) => (
-          <li key={studentItem._id}>{studentItem.NomStudent}</li>
-        ))}
-      </ul>
+      <div className="student">
+        <AjoutStudent />
+
+        <ul>
+          {data.map((studentItem) => (
+            <button className="btn1" key={studentItem._id}>
+              <div className="btn1-p">
+                {" "}
+                {studentItem.NomStudent} {studentItem.PrenomStudent}{" "}
+              </div>
+            </button>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
