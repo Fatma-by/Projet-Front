@@ -16,13 +16,14 @@ function List() {
 }
 
 function DeuxiemeAnneeCours() {
-  const [data,setData] = ressourceStore((state) => [state.data,state.setData]);
+  const [data, setData] = ressourceStore((state) => [
+    state.data,
+    state.setData,
+  ]);
   const [showOne, setShowOne] = useState(false);
   const [params, setParams] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
-
- 
 
   async function getRessource(p) {
     // fetch('/api/Ressources/getRessources',{
@@ -38,10 +39,13 @@ function DeuxiemeAnneeCours() {
     // })
     console.log(params);
     const data = await axios
-      .post("/api/Ressources/getRessources",p)
+      .post("/api/Ressources/getRessources", p)
       .then(async (res) => {
         setData(res.data.Ressources);
-      }).catch((err) => {console.log(err)});
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     return data;
   }
@@ -51,11 +55,30 @@ function DeuxiemeAnneeCours() {
       <div className="Science">
         <div className="classContainers">
           <button
+            onMouseUp={async () => {
+              const queryParams = new URLSearchParams(location.search);
+              
+              queryParams.set("trimestre", 1); 
+              navigate({
+                pathname: location.pathname,
+                
+                search: queryParams.toString(),
+              });
+             
+              console.log(window.location.href);
+              await getRessource({ code: "s/2/d/1" });
+              setShowOne(true);
+            }}
+            className="classButs"
+          >
+            <p>الثلاثي الاول</p>
+          </button>
+          <button
             onMouseDown={async () => {
               const queryParams = new URLSearchParams(location.search);
 
               // Add a new query parameter
-              queryParams.set("trimestre", 1);
+              queryParams.set("trimestre", 2);
 
               navigate({
                 pathname: location.pathname,
@@ -64,20 +87,33 @@ function DeuxiemeAnneeCours() {
               console.log(window.location.href);
             }}
             onMouseUp={async () => {
-             await getRessource( {code:"s/2/d/1"});
+              await getRessource({ code: "s/2/d/2" });
 
               setShowOne(true);
             }}
             className="classButs"
           >
-            <p>الثلاثي الاول</p>
-          </button>
-          <button className="classButs">
             <p> الثلاثي الثاني</p>
           </button>
-          <button className="classButs">
+           <button onMouseDown={async () => {
+              const queryParams = new URLSearchParams(location.search);
+
+              // Add a new query parameter
+              queryParams.set("trimestre", 3);
+
+              navigate({
+                pathname: location.pathname,
+                search: queryParams.toString(),
+              });
+              console.log(window.location.href);
+            }}
+            onMouseUp={async () => {
+              await getRessource({ code: "s/2/d/3" });
+
+              setShowOne(true);
+            }}className="classButs">
             <p>الثلاثي الثالث</p>
-          </button>
+          </button> 
         </div>
         {showOne && (
           <div className="card-Container">
@@ -85,8 +121,7 @@ function DeuxiemeAnneeCours() {
               className="fw-bold display-4 mb-4"
               style={{ position: "relative", left: "500px", top: "500px" }}
             >
-              الثلاثــــي الأول
-            </p>
+                          </p>
             <AcessDevoir params={params} />{" "}
           </div>
         )}
